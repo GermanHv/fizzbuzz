@@ -6,6 +6,13 @@ describe ("Test para ExplorerSevice", ()=>{
         const explorersInNode = ExplorerService.filterByMission(explorers, "node");
         expect (explorersInNode.length).toBe(1)
     })
-
+    test("Requerimiento 2: Calcular explorers en una misión", () => {
+        const explorer = [{ githubUsername: "user1", mission: "node" }];
+        const explorersInNode = ExplorerService.getExplorersUsernamesByMission(
+          explorer,
+          "node"
+        );
+        expect(explorersInNode[0]).toBe("user1");
+      });
 
 })
